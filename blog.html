@@ -95,7 +95,7 @@
           <p class="mx-auto">Get Preminum</p>
           <p class="mx-auto">Settings</p>
           <p class="mx-auto">ExtraInfo</p>
-          <p class="mx-auto">Logout</p>
+          <p class="mx-auto" onclick="Logout()" id="logout">Logout</p>
         </div>
       </div>
       <div class="postCon mt-5 pt-4 d-flex mb-5">
@@ -146,6 +146,14 @@
   let postBlog = document.getElementById("postBlog");
   let upload = document.getElementById("upload");
 
+  function checkUserAuth() {
+    if (!currentUser) {
+      document.body.innerHTML = "";
+      alert("Unauthorised User, please login ");
+      window.location.href = "login.html";
+    }
+  }
+
   function checkBlogUser() {
     if (!currentUser) {
       document.body.innerHTML = "";
@@ -171,6 +179,9 @@
     offcanvas_title.innerHTML = "Update Profile Picture";
     offcanvas_body.innerHTML = `
       <div class="default ">
+        <button onclick="takeBack()" class='takeback'>
+          <span class="material-symbols-outlined"> arrow_back </span>
+        </button>
         <img
         id="userProfilePreview"
         src="https://i.pinimg.com/1200x/e8/d7/d0/e8d7d05f392d9c2cf0285ce928fb9f4a.jpg"
@@ -211,7 +222,7 @@
     if (savedPic) {
       document.getElementById("profile").src = savedPic;
     }
-    let preview = document.getElementById('userProfilePreview')
+    let preview = document.getElementById("userProfilePreview");
     if (preview) {
       preview.src = savedPic;
     }
@@ -351,4 +362,10 @@
   const offcanvasList = [...offcanvasElementList].map(
     (offcanvasEl) => new bootstrap.Offcanvas(offcanvasEl)
   );
+
+  function Logout() {
+    confirm("Are you sure you want to log out?");
+    localStorage.removeItem("blogUserIndex");
+    window.location.href = "login.html";
+  }
 </script>
