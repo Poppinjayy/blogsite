@@ -28,6 +28,18 @@
   </head>
   <body>
     <div class="page">
+      <div class="floatingImg">
+        <img
+          src="./media/27bde6ed0ff5392cc0cd682cceb62eea-removebg-preview.png"
+          alt=""
+        />
+      </div>
+      <div class="floatingImg2">
+        <img
+          src="./media/d0b10ea4413d686e98921669af809f2c-removebg-preview.png"
+          alt=""
+        />
+      </div>
       <!-- <div class="side-imgCon"></div> -->
       <div class="side-imgCon2"></div>
       <div class="nav">
@@ -170,11 +182,16 @@
   }
   displayBloggerName();
 
+  previousTitle = "";
+  previousBody = "";
   function Profile() {
     let profile = document.getElementById("profile");
     let offcanvas_title = document.querySelector(".offcanvas-title");
     let offcanvas_body = document.querySelector(".offcanvas-body");
     let navProfilePic = document.querySelector(".userProfile");
+
+    previousTitle = offcanvas_title.innerHTML;
+    previousBody = offcanvas_body.innerHTML;
 
     offcanvas_title.innerHTML = "Update Profile Picture";
     offcanvas_body.innerHTML = `
@@ -193,6 +210,7 @@
         <input type="file" id="addUserPic" accept =".jpg, .png">
       </form>
     `;
+
     let fileInput = document.getElementById("addUserPic");
     let preview = document.getElementById("userProfilePreview");
 
@@ -227,6 +245,14 @@
       preview.src = savedPic;
     }
   });
+
+  function takeBack() {
+    let offcanvas_title = document.querySelector(".offcanvas-title");
+    let offcanvas_body = document.querySelector(".offcanvas-body");
+
+    offcanvas_title.innerHTML = previousTitle;
+    offcanvas_body.innerHTML = previousBody;
+  }
 
   // function changeUserPP() {
   //   let userProfile = document.getElementById("userProfile");
@@ -364,8 +390,10 @@
   );
 
   function Logout() {
-    confirm("Are you sure you want to log out?");
-    localStorage.removeItem("blogUserIndex");
-    window.location.href = "login.html";
+    let confirmLogout = window.confirm("Are you sure you want to log out?");
+    if (confirmLogout) {
+      localStorage.removeItem("blogUserIndex");
+      window.location.href = "login.html";
+    }
   }
 </script>

@@ -5,6 +5,26 @@ body {
   font-family: "Poppins";
   color: #0f1516;
 }
+.page {
+  position: relative;
+}
+.floatingImg {
+  position: absolute;
+  right: 0px;
+  bottom: -200px;
+}
+.floatingImg img {
+  width: 240px;
+  height: auto;
+}
+.floatingImg2{
+  position: absolute;
+  top: 25%;
+}
+.floatingImg2 img{
+  width: 180px;
+  height: auto;
+}
 .side-imgCon,
 .side-imgCon2 {
   background-size: cover;
@@ -15,14 +35,14 @@ body {
   z-index: -2;
 }
 .side-imgCon {
-  background-image: url(https://i.pinimg.com/736x/0b/18/00/0b1800f627ba08a29a724854fa3ef349.jpg);
+  background-image: url(./media/d0b10ea4413d686e98921669af809f2c-removebg-preview.png);
   left: 0;
-    width: 40vw;
+  width: 20vw;
 }
 .side-imgCon2 {
   background-image: url(./media/4b062c158b171a6b33bff204deb7187b-removebg-preview.png);
   right: 0;
-    width: 58vw;
+  width: 58vw;
 }
 .nav {
   position: sticky !important;
@@ -44,11 +64,11 @@ body {
 #navbarNav {
   margin-left: 50vw;
 }
-.userProfileCon{
+.userProfileCon {
   background-color: transparent !important;
   border: none !important;
 }
-.userProfileCon:hover{
+.userProfileCon:hover {
   /* width: 32px; */
   background-color: rgb(127, 140, 148, 0.3) !important;
 }
@@ -93,6 +113,7 @@ body {
   font-weight: 500;
   width: 38vw;
   color: #0f1516;
+  margin-left: 100px;
 }
 .form {
   /* padding-left: 30px !important; */
@@ -108,6 +129,7 @@ body {
   background: transparent;
   border: 1px solid #0f1516;
   border-radius: 10px;
+  text-transform: capitalize;
   /* color: white; */
 }
 .toupload .addbtn {
@@ -163,6 +185,10 @@ body {
 .card-body {
   color: #c9c2c2 !important;
 }
+.card-title,
+.card-text {
+  text-transform: capitalize;
+}
 .buttons button {
   border: 1px solid #c9c2c2;
   border-radius: 5px;
@@ -172,11 +198,11 @@ body {
   padding: 5px;
   cursor: pointer;
 }
-.default{
+.default {
   margin-left: 85px !important;
   position: relative;
 }
-.default .takeback{
+.default .takeback {
   background-color: #7f8c94;
   border: #c9c2c2;
   position: absolute;
@@ -185,21 +211,21 @@ body {
   display: flex;
   align-items: center;
 }
-.default #userProfilePreview{
+.default #userProfilePreview {
   width: 200px !important;
   padding: 20px;
   border-radius: 50%;
 }
-#pictureSetting input{
+#pictureSetting input {
   display: none;
 }
-#changeUserPic{
+#changeUserPic {
   color: #c9c2c2;
   border: 1px solid #c9c2c2;
   border-radius: 5px;
   padding: 5px;
   cursor: pointer;
 }
-#pictureSetting{
-margin-left: 120px !important;
+#pictureSetting {
+  margin-left: 120px !important;
 }
