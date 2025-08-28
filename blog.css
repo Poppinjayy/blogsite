@@ -11,7 +11,7 @@ body {
 .floatingImg {
   position: absolute;
   right: 0px;
-  bottom: -200px;
+  bottom: -180px;
 }
 .floatingImg img {
   width: 240px;
@@ -29,10 +29,11 @@ body {
 .side-imgCon2 {
   background-size: cover;
   background-position-y: 90%;
-  height: 200%;
+  height: 120%;
   position: absolute;
   top: 0;
   z-index: -2;
+
 }
 .side-imgCon {
   background-image: url(./media/d0b10ea4413d686e98921669af809f2c-removebg-preview.png);
